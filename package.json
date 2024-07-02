@@ -1,0 +1,22 @@
+{
+  "name": "drac-gay",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.7.0",
+    "@astrojs/svelte": "^5.6.0",
+    "astro": "^4.11.3",
+    "svelte": "5.0.0-next.133",
+    "typescript": "^5.5.3"
+  },
+  "devDependencies": {
+    "unocss": "^0.61.0"
+  }
+}
