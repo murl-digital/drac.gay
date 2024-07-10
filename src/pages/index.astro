@@ -1,23 +1,45 @@
 ---
-import { Image } from 'astro:assets';
-import Tooltip from '../components/Tooltip.svelte';
-import splash from '../images/DRACONIUM_zatch.png';
+import { Image } from "astro:assets";
+import Tooltip from "../components/Tooltip.svelte";
+import splash from "../images/DRACONIUM_zatch.png";
+import LinkItem from "../components/LinkItem.astro";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body class="bg-gray-9 text-white">
-		<header class="w-screen h-screen flex justify-center items-center relative overflow-hidden">
-			<h1 class="font-800 text-16 bg-clip-text text-transparent bg-gradient-to-rb from-red via-blue to-purple backdrop-blur-2xl">
-				your local <Tooltip client:load>gay<span class="text-8 align-top">*</span></Tooltip> dragon
-			</h1>
-			<div class="absolute top-1/4 left-0 w-1/2 z-[-1]"><div class="after:content-empty after:absolute after:top-[-10%] after:left-[-115%] after:w-[250%] after:h-[200%] after:bg-gradient-radial after:from-transparent after:to-gray-9 after:to-55%"></div> <Image src={splash} alt=""/></div>
-		</header>
-	</body>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Astro</title>
+    </head>
+    <body class="bg-gray-9 text-white">
+        <header
+            class="w-screen h-screen flex justify-center items-center relative overflow-hidden"
+        >
+            <h1
+                class="font-800 text-16 bg-clip-text text-transparent bg-gradient-to-rb from-red via-blue to-purple backdrop-blur-2xl"
+            >
+                your local <Tooltip client:load
+                    >gay<span class="text-8 align-top">*</span></Tooltip
+                > dragon
+            </h1>
+            <div class="absolute bottom-[-27%] left-0 w-1/2 z-[-1]">
+                <div
+                    class="after:content-empty after:absolute after:top-[-10%] after:left-[-115%] after:w-[250%] after:h-[200%] after:bg-gradient-radial after:from-transparent after:to-gray-9 after:to-55%"
+                >
+                </div>
+                <Image loading="eager" src={splash} alt="" />
+            </div>
+        </header>
+        <article class="h-screen w-screen flex justify-center items-center">
+            <div class="flex gap-4 items-baseline">
+                <h1 class="font-bold text-2xl">Things I'm doing</h1>
+                <ul class="flex flex-col gap-4 b-l-white b-l-2 p-4 py-8">
+                    <LinkItem href="https://draconium.productions">The DRACONIUM Project</LinkItem>
+                    <LinkItem href="https://cozydsp.space">Plugins from cozy dsp</LinkItem>
+                </ul>
+            </div>
+        </article>
+    </body>
 </html>

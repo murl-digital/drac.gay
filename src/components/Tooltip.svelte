@@ -1,5 +1,8 @@
 <script lang="ts">
-    let { children } = $props();
+    import type { Snippet } from "svelte";
+    import { fly } from "svelte/transition";
+
+    let { children }: {children: Snippet} = $props();
     let hovered = $state(false);
     let mouseX = $state(0);
     let mouseY = $state(0);
@@ -32,12 +35,10 @@
     }
 </script>
 
-
 <svelte:window {onmousemove}/>
 <div class="inline" {onmouseenter} {onmouseleave}>{@render children()}</div>
-{#if hovered} 
-    <div use:teleport class="block fixed bg-black text-white" style:top={`${mouseY}px`} style:left={`${mouseX}px`}>
+{#if hovered}
+    <div transition:fly={{y: 50, duration: 250}} style:top={`${mouseY + 25}px`} style:left={`${mouseX + 25}px`} use:teleport class="fixed block backdrop-blur text-white p-2 rounded-lg">
         <aside>i'm actually ace lol</aside>
     </div>
 {/if}
-
