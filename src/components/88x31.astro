@@ -1,0 +1,16 @@
+---
+import type { ImageMetadata } from "astro";
+import { getImage } from "astro:assets";
+
+interface Props {
+    img: ImageMetadata;
+    href: string;
+}
+
+const { img, href } = Astro.props;
+const processed_img = await getImage({ src: img, format: "png" });
+---
+
+<a href={href}>
+    <img src={processed_img.src} />
+</a>

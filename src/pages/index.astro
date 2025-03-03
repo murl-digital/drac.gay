@@ -1,11 +1,43 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-	<Welcome />
+    <marquee
+        behavior="scroll"
+        scrolldelay="50"
+        scrollamount="10"
+        truespeed
+        class="text-[5rem] font-mmd"
+        >Your local <span
+            class="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-transparent"
+            >gay</span
+        > Dragon</marquee
+    >
+    <article class="p-2">
+        this is a lil landing page for drac, who is gay. you might know me by a
+        few other names.
+        <br />
+        <br />
+        this page is still under construction!
+    </article>
+    <hr />
+    <article class="p-2">
+        other things i'm doing
+
+        <ul class="list-inside [list-style-type:'-_']">
+            <li>
+                <a
+                    href="https://draconium.music"
+                    class="hover:underline text-cyan">the DRACONIUM project</a
+                >
+            </li>
+            <li>
+                <a
+                    href="https://cozydsp.space"
+                    class="hover:underline text-cyan"
+                    >VST plugins by cozy dsp</a>
+            </li>
+        </ul>
+    </article>
 </Layout>
